@@ -4,4 +4,4 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 // Background service worker initialization
-console.log('Background service worker initialized'); 
+console.log('Background service worker initialized');
