@@ -7,6 +7,7 @@
 </head>
 <body>
   <div class="container">
+    <div id="notification" class="notification"></div>
     <h1>FETCH</h1>
     <div id="main-content">
       <div id="info">
@@ -14,8 +15,14 @@
         <p id="tab-title"></p>
       </div>
       <div class="actions">
-        <button id="saveBtn">Save</button>
-        <button id="listBtn">List All</button>
+        <button id="saveBtn" class="btn btn-primary">
+          <span class="btn-icon">💾</span>
+          Save
+        </button>
+        <button id="listBtn" class="btn btn-secondary">
+          <span class="btn-icon">📋</span>
+          List All
+        </button>
       </div>
       <div id="saved-items" style="display: none">
         <h2>Saved Items</h2>

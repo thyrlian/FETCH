@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Save updated items back to storage
         chrome.storage.sync.set({ savedItems: savedItems }, function() {
-          console.log('Item saved');
-          alert('Page saved!');
+          showNotification('Page saved successfully!');
         });
       });
     });
@@ -58,3 +57,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Add this new function for showing notifications
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.textContent = message;
+  notification.classList.add('show');
+  
+  // Hide notification after 2 seconds
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 2000);
+}
