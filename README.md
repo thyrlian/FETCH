@@ -1,6 +1,6 @@
 # FETCH
 
-Find Everything Through Context & Highlights
+**F**ind **E**verything **T**hrough **C**ontext & **H**ighlights
 
 ## License
 
