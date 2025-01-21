@@ -1,8 +1,6 @@
-# FETCH
+# <img src="https://github.com/thyrlian/FETCH/blob/main/design/Icon.png?raw=true" width="48"> FETCH
 
 **F**ind **E**verything **T**hrough **C**ontext & **H**ighlights
-
-<img src="https://github.com/thyrlian/FETCH/blob/main/design/Icon.png?raw=true" width="128">
 
 ## License
 
