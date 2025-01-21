@@ -1,9 +1,7 @@
 // Initialize popup functionality
 document.addEventListener('DOMContentLoaded', function() {
   const saveBtn = document.getElementById('saveBtn');
-  const listBtn = document.getElementById('listBtn');
-  const savedItems = document.getElementById('saved-items');
-  const itemsList = document.getElementById('items-list');
+  const searchBtn = document.getElementById('searchBtn');
 
   // Get current active tab and display title
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -26,35 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Save updated items back to storage
         chrome.storage.sync.set({ savedItems: savedItems }, function() {
-          showNotification('Page saved successfully!');
+          showNotification('Saved!');
         });
       });
     });
   });
 
-  // List button click handler
-  listBtn.addEventListener('click', function() {
-    // Toggle saved items visibility
-    const isHidden = savedItems.style.display === 'none';
-    savedItems.style.display = isHidden ? 'block' : 'none';
-    
-    if (isHidden) {
-      // Get and display saved items
-      chrome.storage.sync.get(['savedItems'], function(result) {
-        const items = result.savedItems || [];
-        itemsList.innerHTML = ''; // Clear existing items
-        
-        items.forEach(function(item) {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = item.url;
-          a.textContent = item.highlight;
-          a.target = '_blank';
-          li.appendChild(a);
-          itemsList.appendChild(li);
-        });
-      });
-    }
+  // Search button click handler
+  searchBtn.addEventListener('click', function() {
+    chrome.tabs.create({ url: 'search.html' });
   });
 });
 
