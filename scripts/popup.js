@@ -13,16 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
     saveBtn.addEventListener('click', function() {
       const item = {
         url: currentTab.url,
-        highlight: currentTab.title,  // Using title as highlight for now
+        highlight: currentTab.title,
         timestamp: new Date().toISOString()
       };
 
       // Get existing items from storage
       chrome.storage.sync.get(['savedItems'], function(result) {
         const savedItems = result.savedItems || [];
-        savedItems.push(item);
         
-        // Save updated items back to storage
+        if (isUrlExists(item.url, savedItems)) {
+          showNotification('Already exists!');
+          return;
+        }
+        
+        savedItems.push(item);
         chrome.storage.sync.set({ savedItems: savedItems }, function() {
           showNotification('Saved!');
         });
@@ -35,6 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.create({ url: 'search.html' });
   });
 });
+
+// Check if URL already exists in saved items
+function isUrlExists(url, savedItems) {
+  return savedItems.some(item => item.url === url);
+}
 
 // Add this new function for showing notifications
 function showNotification(message) {
