@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const time = document.createElement('div');
       time.className = 'item-time';
       const date = new Date(item.timestamp);
-      time.textContent = date.toLocaleString();
+      time.textContent = formatDate(date);
 
       meta.appendChild(url);
       meta.appendChild(time);
@@ -40,4 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
       itemsList.appendChild(itemDiv);
     });
   });
-}); 
+});
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  
+  return `${year}-${month}-${day} · ${hours}:${minutes}`;
+} 
