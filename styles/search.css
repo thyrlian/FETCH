@@ -44,11 +44,14 @@ h2 {
   margin: 12px 0;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   transition: all 0.2s ease;
+  border-left: 3px solid transparent;
 }
 
 .item-entry:hover {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  background-color: #f8f9fa;
+  border-left: 3px solid #1a73e8;
 }
 
 .item-title {
@@ -58,10 +61,12 @@ h2 {
   font-weight: 500;
   display: block;
   margin-bottom: 8px;
+  transition: color 0.2s ease;
 }
 
 .item-title:hover {
   text-decoration: underline;
+  color: #0d47a1;
 }
 
 .item-meta {
