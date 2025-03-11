@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchBtn = document.getElementById('searchBtn');
   searchBtn.insertAdjacentText('beforeend', chrome.i18n.getMessage("funcSearch"));
 
-  // Get current active tab and display title
+  // Get current active tab info
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     const currentTab = tabs[0];
     const titleElement = document.getElementById('tab-title');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         timestamp: new Date().toISOString()
       };
 
-      // Get existing items from storage
+      // Check whether item already exists, if not, save it
       chrome.storage.sync.get(['savedItems'], function(result) {
         const savedItems = result.savedItems || [];
         
