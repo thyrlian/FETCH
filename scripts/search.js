@@ -13,8 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Load saved items
   chrome.storage.sync.get(['savedItems'], function(result) {
-    const items = result.savedItems || [];
+    let items = result.savedItems || [];
     
+    // Sort items by timestamp in descending order
+    items.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
     if (items.length === 0) {
       itemsList.innerHTML = '<div class="empty-state">' + chrome.i18n.getMessage("textEmptyState") + '</div>';
       return;
