@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedItems = result.savedItems || [];
         
         if (isUrlExists(item.url, savedItems)) {
-          showNotification('Already exists!');
+          showNotification(chrome.i18n.getMessage('textSaveFailed'));
           return;
         }
         
         savedItems.push(item);
         chrome.storage.sync.set({ savedItems: savedItems }, function() {
-          showNotification('Saved!');
+          showNotification(chrome.i18n.getMessage('textSaveSuccess'));
         });
       });
     });

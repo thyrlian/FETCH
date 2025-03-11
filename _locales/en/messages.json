@@ -15,6 +15,14 @@
     "message": "Search",
     "description": "The function name of search"
   },
+  "textSaveSuccess": {
+    "message": "Saved!",
+    "description": "The text of successful save"
+  },
+  "textSaveFailed": {
+    "message": "Already saved!",
+    "description": "The text of failed save"
+  },
   "textItemsListTitle": {
     "message": "Saved pages",
     "description": "The title of the items list"
