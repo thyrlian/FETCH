@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "FETCH",
+  "name": "__MSG_appName__",
   "version": "1.0.0",
-  "description": "Find Everything Through Context & Highlights",
+  "description": "__MSG_appFullName__",
+  "default_locale": "en",
   "permissions": [
     "storage",
     "tabs",

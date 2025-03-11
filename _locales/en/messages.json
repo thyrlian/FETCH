@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "FETCH",
+    "description": "The name of the application"
+  },
+  "appFullName": {
+    "message": "Find Everything Through Context & Highlights",
+    "description": "The full name of the application"
+  },
+  "funcSearch": {
+    "message": "Search",
+    "description": "The function name of search"
+  },
+  "textItemsListTitle": {
+    "message": "Saved pages",
+    "description": "The title of the items list"
+  }
+}

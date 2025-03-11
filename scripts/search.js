@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Set constants
+  const appName = chrome.i18n.getMessage("appName");
+  const funcSearch = chrome.i18n.getMessage("funcSearch");
+  document.getElementById('app-head-title').textContent = appName + " - " + funcSearch;
+  document.getElementById('app-body-title').textContent = appName + " - " + funcSearch;
+  const itemsListTitle = chrome.i18n.getMessage("textItemsListTitle");
+  document.getElementById('items-list-title').textContent = itemsListTitle;
+  
   const itemsList = document.getElementById('items-list');
   
   // Load saved items

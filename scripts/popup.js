@@ -1,5 +1,10 @@
 // Initialize popup functionality
 document.addEventListener('DOMContentLoaded', function() {
+  // Set constants
+  const appName = chrome.i18n.getMessage("appName");
+  document.getElementById('app-head-title').textContent = appName;
+  document.getElementById('app-body-title').textContent = appName;
+
   const saveBtn = document.getElementById('saveBtn');
   const searchBtn = document.getElementById('searchBtn');
 
