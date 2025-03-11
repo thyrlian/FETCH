@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('app-body-title').textContent = appName;
 
   const saveBtn = document.getElementById('saveBtn');
+  saveBtn.insertAdjacentText('beforeend', chrome.i18n.getMessage("funcSave"));
+  
   const searchBtn = document.getElementById('searchBtn');
+  searchBtn.insertAdjacentText('beforeend', chrome.i18n.getMessage("funcSearch"));
 
   // Get current active tab and display title
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {

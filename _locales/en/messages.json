@@ -7,6 +7,10 @@
     "message": "Find Everything Through Context & Highlights",
     "description": "The full name of the application"
   },
+  "funcSave": {
+    "message": "Save",
+    "description": "The function name of save"
+  },
   "funcSearch": {
     "message": "Search",
     "description": "The function name of search"
