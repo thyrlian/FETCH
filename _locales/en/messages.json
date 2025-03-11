@@ -18,5 +18,9 @@
   "textItemsListTitle": {
     "message": "Saved pages",
     "description": "The title of the items list"
+  },
+  "textEmptyState": {
+    "message": "No saved items yet",
+    "description": "The text of the empty list"
   }
 }

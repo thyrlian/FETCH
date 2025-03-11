@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = result.savedItems || [];
     
     if (items.length === 0) {
-      itemsList.innerHTML = '<div class="empty-state">No saved items yet</div>';
+      itemsList.innerHTML = '<div class="empty-state">' + chrome.i18n.getMessage("textEmptyState") + '</div>';
       return;
     }
 
