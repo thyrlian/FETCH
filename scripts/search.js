@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('app-body-title').textContent = appName + " - " + funcSearch;
   const itemsListTitle = chrome.i18n.getMessage("textItemsListTitle");
   document.getElementById('items-list-title').textContent = itemsListTitle;
+  document.getElementById('search-input').placeholder = funcSearch + "...";
+  document.getElementById('search-button').textContent = funcSearch;
   
   const itemsList = document.getElementById('items-list');
   
